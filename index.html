@@ -8,24 +8,47 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <input type="range" min="1" max="20" name="" id="length" />
-    <div>
-      <input type="checkbox" name="" id="uppercase" />
-      <label for="uppercase">include Uppercase Letters</label>
-    </div>
-    <div>
-      <input type="checkbox" name="" id="lowercase" />
-      <label for="lowercase">include Lowercase Letters</label>
-    </div>
-    <div>
-      <input type="checkbox" name="" id="numbers" />
-      <label for="numbers">include Numbers </label>
-    </div>
-    <div>
-      <input type="checkbox" name="" id="symbols" />
-      <label for="symbols">include Symbols </label>
-    </div>
-    <button id="generate">Generate</button>
-    <p id="password"></p>
+    <main>
+      <h3 class="header">Password Generator</h3>
+      <div class="pass-result-div">
+        <p id="password">Generated Password</p>
+        <img
+          src="./assets/fa-regular_copy.png"
+          alt="copy-icon"
+          class="copy-btn"
+          id="copy-btn"
+        />
+      </div>
+      <section class="generation-settings-section">
+        <div class="input-length-container">
+          <p class="length-para">Character Length</p>
+          <span id="actual-pass-length"></span>
+        </div>
+        <input type="range" min="1" max="20" name="" id="length" />
+
+        <div class="input-container">
+          <input type="checkbox" name="" class="inputChecked" id="uppercase" />
+          <label for="uppercase">include Uppercase Letters</label>
+        </div>
+        <div class="input-container">
+          <input
+            type="checkbox"
+            step="backgroundColor:black"
+            name=""
+            id="lowercase"
+          />
+          <label for="lowercase">include Lowercase Letters</label>
+        </div>
+        <div class="input-container">
+          <input type="checkbox" name="" id="numbers" />
+          <label for="numbers">include Numbers </label>
+        </div>
+        <div class="input-container">
+          <input type="checkbox" name="" id="symbols" />
+          <label for="symbols">include Symbols </label>
+        </div>
+        <button id="generate">Generate</button>
+      </section>
+    </main>
   </body>
 </html>

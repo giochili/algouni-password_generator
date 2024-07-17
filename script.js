@@ -1,8 +1,14 @@
 const generateBtn = document.getElementById("generate");
 const generatedPass = document.getElementById("password");
+const actualPassLength = document.getElementById("actual-pass-length");
+const length = document.getElementById("length").value;
+const lengthForChange = document.getElementById("length");
+actualPassLength.textContent = length;
+lengthForChange.addEventListener("change", (event) => {
+  actualPassLength.textContent = event.target.value;
+});
 
 generateBtn.addEventListener("click", () => {
-  const length = document.getElementById("length").value;
   let includeUppercase = document.getElementById("uppercase").checked;
   let includeLowercase = document.getElementById("lowercase").checked;
   let includeNumbers = document.getElementById("numbers").checked;
@@ -20,6 +26,7 @@ generateBtn.addEventListener("click", () => {
   if (includeSymbols) characters += symbols;
   if (characters === "") {
     alert(`please select at least one checkbox`);
+    generatedPass.textContent = "Generated Password";
   }
 
   let password = "";
@@ -27,6 +34,7 @@ generateBtn.addEventListener("click", () => {
     const randomIndex = Math.floor(Math.random() * characters.length);
     password += characters[randomIndex];
   }
-  if (characters != "") generatedPass.textContent = password;
-  console.log(password);
+  if (characters != "") {
+    generatedPass.textContent = password || "Generated Password";
+  }
 });
